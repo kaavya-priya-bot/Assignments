@@ -27,7 +27,7 @@ function gradeCalculation(score){
             return "E";
             break;
         case score>=0 && score<=20:
-            return "F";;
+            return "F";
             break;
         default:
             console.log("Invalid Input");
