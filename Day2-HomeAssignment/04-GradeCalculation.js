@@ -3,45 +3,46 @@ to assess score ranges. */
 function gradeCalculation(score){
     switch(true){
         case score>90 && score<=100:
-            console.log(" Grade scored : A+");
+            return "A+";
             break;
         case score>80 && score<=90:
-            console.log(" Grade scored : A");
+            return "A";
             break
         case score>70 && score<=80:
-            console.log(" Grade scored : B+");
+            return "B+";
             break;
         case score>60 && score<=70:
-            console.log(" Grade scored : B");
+            return "B";
             break;
         case score>50 && score<=60:
-            console.log(" Grade scored : C+");
+            return "C+";
             break;
         case score>40 && score<=50:
-            console.log(" Grade scored : C");
+            return "C";
             break;
         case score>32 && score<=40:
-            console.log(" Grade scored : D");
+            return "D";
             break;
         case score>20 && score<=32:
-            console.log(" Grade scored : E");
+            return "E";
             break;
         case score>=0 && score<=20:
-            console.log(" Grade scored : F");
+            return "F";;
             break;
         default:
             console.log("Invalid Input");
 
     }
 }
-gradeCalculation(92);
-gradeCalculation(80);
-gradeCalculation(74);
-gradeCalculation(60);
-gradeCalculation(59);
-gradeCalculation(44);
-gradeCalculation(33);
-gradeCalculation(32);
-gradeCalculation(23);
-gradeCalculation(0);
-gradeCalculation(9);
+
+console.log("Grade scored: "+gradeCalculation(92));
+console.log("Grade scored: "+gradeCalculation(80));
+console.log("Grade scored: "+gradeCalculation(74));
+console.log("Grade scored: "+gradeCalculation(60));
+console.log("Grade scored: "+gradeCalculation(59));
+console.log("Grade scored: "+gradeCalculation(44));
+console.log("Grade scored: "+gradeCalculation(33));
+console.log("Grade scored: "+gradeCalculation(23));
+console.log("Grade scored: "+gradeCalculation(0));
+console.log("Grade scored: "+gradeCalculation(9));
+
