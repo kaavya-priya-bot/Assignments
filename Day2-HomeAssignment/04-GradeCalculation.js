@@ -30,7 +30,7 @@ function gradeCalculation(score){
             return "F";
             break;
         default:
-            console.log("Invalid Input");
+            return "Invalid Input";
 
     }
 }
@@ -45,4 +45,5 @@ console.log("Grade scored: "+gradeCalculation(33));
 console.log("Grade scored: "+gradeCalculation(23));
 console.log("Grade scored: "+gradeCalculation(0));
 console.log("Grade scored: "+gradeCalculation(9));
+console.log("Grade scored: "+gradeCalculation(-10));
 
