@@ -1,9 +1,11 @@
 //var vs let vs const and variable scoping 
 const browserName="Chrome";
 function getBrowserName(){
-var browserName="Chrome"
+var browserName="firefox";
 if(browserName==="Chrome"){
-    let browserName="chromeLet";
+     console.log(browserName);
+}else{
+    let browserName="webkit";
     console.log(browserName);
 }
 console.log(browserName);
