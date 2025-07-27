@@ -57,7 +57,7 @@ console.log(courseName.slice(-6));
 //negative index is allowed, the count starts from -1
 
 //substring
-console.log(courseName.substring(3,5));
+console.log(courseName.substring(3,5)); 
 console.log(courseName.substring(5,3));
 console.log(courseName.substring(5,-3));
 /*start index included and end index not included also optional
