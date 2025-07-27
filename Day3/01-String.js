@@ -1,5 +1,5 @@
 
-//String literal- "",'',',``
+//String literal- "",'',``
 
 let firstName="Ravindran";
 let userName="Ravindran";
@@ -39,10 +39,10 @@ let courseName="Playwright";
 console.log(`length of the string is ${courseName.length}`);
 
 //charAt
-console.log(`length of the string is ${courseName.charAt(2)}`);
+console.log(`Character at 2 is ${courseName.charAt(2)}`);
 
 //indexof
-console.log(`length of the string is ${courseName.indexOf('a')}`);
+console.log(`index of 'a' is ${courseName.indexOf('a')}`);
 
 //split
 let companyName="Qeagle Assurance Company";
