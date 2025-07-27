@@ -47,7 +47,7 @@ console.log(`index of 'a' is ${courseName.indexOf('a')}`);
 //split
 let companyName="Qeagle Assurance Company";
 let splitCompanyNameAsArray=companyName.split("");
-console.log(splitCompanyNameAsArray);
+console.log(splitCompanyNameAsArray); 
 
 //slice
 console.log(courseName.slice(2,4));
