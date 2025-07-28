@@ -26,7 +26,7 @@ test("1 Edit Lead ", async ({ page }) => {
     await page.waitForTimeout(3000);
 })
 function generateRandomCompanyName() {
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    const characters = 'abcdefghijklmnopqrstuvwxyz';
     let result = '';
     for (let i = 0; i < 7; i++) {
         result += characters.charAt(Math.floor(Math.random() * characters.length));
@@ -35,7 +35,7 @@ function generateRandomCompanyName() {
 }
 
 function generateRandomFirstName() {
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    const characters = 'abcdefghijklmnopqrstuvwxyz';
     let result = '';
     for (let i = 0; i < 5; i++) {
         result += characters.charAt(Math.floor(Math.random() * characters.length));
@@ -43,7 +43,7 @@ function generateRandomFirstName() {
     return "First" + result;
 }
 function generateRandomLastName() {
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    const characters = 'abcdefghijklmnopqrstuvwxyz';
     let result = '';
     for (let i = 0; i < 5; i++) {
         result += characters.charAt(Math.floor(Math.random() * characters.length));

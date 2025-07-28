@@ -21,13 +21,14 @@ test("1 Create Lead ", async ({ page }) => {
     await page.locator("input[name='lastName']").fill(expectedLastName);
     await page.locator("input[name='Company']").fill(expectedCompanyName);
     await page.locator("button[name='SaveEdit']").click();
-    // await page.locator("slot[name='primaryField']");
-    let ActualLastName = await page.locator("//slot[@name='primaryField']/lightning-formatted-name").innerText();
-    console.log(ActualLastName);
-    let ActualCompany = await page.locator("//p[@title='Company']/following-sibling::p/slot/lightning-formatted-text").innerText();
+    let actualLastName = await page.locator("lightning-formatted-name:below(:text('Lead'))").innerText();
+    console.log("ExpectedLastName:" + expectedLastName);
+    console.log("ActualLastName:" + actualLastName);
+    let actualCompany = await page.locator("//p[@title='Company']/following-sibling::p/slot/lightning-formatted-text").innerText();
     //await page.waitForTimeout(3000);
-    console.log(ActualCompany);
-    checkValues(expectedLastName, ActualLastName, expectedCompanyName, ActualCompany);
+    console.log("ExpectedCompanyName:" + expectedCompanyName);
+    console.log("ActualCompany:" + actualCompany);
+    checkValues(expectedLastName, actualLastName, expectedCompanyName, actualCompany);
 })
 
 function checkValues(word1, word2, word3, word4) {
@@ -47,7 +48,7 @@ function checkValues(word1, word2, word3, word4) {
         })
 }
 function generateRandomLeadName() {
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    const characters = 'abcdefghijklmnopqrstuvwxyz';
     let result = '';
     for (let i = 0; i < 5; i++) {
         result += characters.charAt(Math.floor(Math.random() * characters.length));
@@ -55,7 +56,7 @@ function generateRandomLeadName() {
     return "Lead" + result;
 }
 function generateRandomCompanyName() {
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    const characters = 'abcdefghijklmnopqrstuvwxyz';
     let result = '';
     for (let i = 0; i < 7; i++) {
         result += characters.charAt(Math.floor(Math.random() * characters.length));

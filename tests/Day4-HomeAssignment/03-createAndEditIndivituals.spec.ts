@@ -98,7 +98,7 @@ test.describe('Sequential Test Suite', () => {
             })
     }
     function generateRandomLastName() {
-        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+        const characters = 'abcdefghijklmnopqrstuvwxyz';
         let result = '';
         for (let i = 0; i < 5; i++) {
             result += characters.charAt(Math.floor(Math.random() * characters.length));
@@ -106,7 +106,7 @@ test.describe('Sequential Test Suite', () => {
         return "Leaf" + result;
     }
     function generateRandomFirstName() {
-        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+        const characters = 'abcdefghijklmnopqrstuvwxyz';
         let result = '';
         for (let i = 0; i < 7; i++) {
             result += characters.charAt(Math.floor(Math.random() * characters.length));
