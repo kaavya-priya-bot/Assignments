@@ -1,4 +1,4 @@
-//named function: only named function is getting hoisted
+//named function: -> get hoisted
 function funName1(a,b){
  //   let a=10;
   //  let b=10;
@@ -6,13 +6,13 @@ function funName1(a,b){
 }
 console.log(funName1(10,10));
 
-//Anonymous function / function expression
+//Anonymous function / function expression-no hoisting
 let funName2= function (){
     console.log("Hello Team this is an anonymous function")
     }
     funName2();
 
-//Arrow Function :replace function with fat array
+//Arrow Function :replace function with fat array -> no hoisting
 let funName3=  () => {
     console.log("Hello Team this is an anonymous function")
     }
