@@ -56,8 +56,6 @@ test.describe('Sequential Test Suite', () => {
         await page.locator("a:below(:text('Salutation'))").first().click();
         await page.locator(":text('Mr.')").click();
         await page.locator("input[placeholder='First Name']").fill(firstName);
-        await page.keyboard.press('Tab');
-        await page.locator("button[title='Save & New']");
         await page.locator("button[title='Save']").click();
         await page.reload();
         let ActualName = await page.locator("//div[text()='Individual']/following-sibling::div/span").innerText();

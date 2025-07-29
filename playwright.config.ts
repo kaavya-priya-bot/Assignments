@@ -27,7 +27,7 @@ export default defineConfig({
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://localhost:3000',
-    channel:"chrome",
+    //channel:"chrome",
     headless:false,
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
@@ -40,7 +40,7 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
 
-    /*  {
+     /* {
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
     }, */
@@ -63,7 +63,7 @@ export default defineConfig({
     /* Test against branded browsers. */
      /* {
        name: 'Microsoft Edge',
-       use: { ...devices['Desktop Edge'], channel: 'msedge' },
+       use: { ...devices['Desktop Edge'], channel: 'msedge'},
      }, */
     // {
     //   name: 'Google Chrome',
