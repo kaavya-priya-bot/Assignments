@@ -28,10 +28,11 @@ test.describe('Sequential Test Suite', () => {
         //await page.waitForTimeout(3000);
         await page.locator("button[title='Save']").click();
         //await page.waitForTimeout(3000);
-        let ActualLastName = await page.locator("//div[text()='Individual']/following-sibling::div/span").innerText();
-        console.log(ActualLastName);
+        let actualLastName = await page.locator("//div[text()='Individual']/following-sibling::div/span").innerText();
+        console.log("Expected Last Name from the page: "+lastName);
+        console.log("Actual Last Name fetched from the page: "+actualLastName);
         await page.waitForTimeout(3000);
-        verifyLastName(lastName, ActualLastName);
+        verifyLastName(lastName, actualLastName);
     })
 
     test("4 Edit Individuals", async ({ page }) => {
@@ -58,19 +59,21 @@ test.describe('Sequential Test Suite', () => {
         await page.locator("input[placeholder='First Name']").fill(firstName);
         await page.locator("button[title='Save']").click();
         await page.reload();
-        let ActualName = await page.locator("//div[text()='Individual']/following-sibling::div/span").innerText();
-        console.log(ActualName);
-        verifyNames(firstName, lastName, ActualName);
+        let actualName = await page.locator("//div[text()='Individual']/following-sibling::div/span").innerText();
+        console.log("Expected First Name from the page: "+firstName);
+        console.log("Expected Last Name from the page: "+lastName);
+        console.log("Actual Name fetched from the page: "+actualName);
+        verifyNames(firstName, lastName, actualName);
     })
     function verifyNames(word1, word2, word3) {
-        let leadAddCheck = new Promise((resolve, reject) => {
+        let verifyNamePromise = new Promise((resolve, reject) => {
             if (word3.includes(word1) && word3.includes(word2)) {
                 resolve("Individual updated successfully")
             } else {
                 reject("Individual not updated");
             }
         });
-        leadAddCheck
+        verifyNamePromise
             .then(message => {
                 console.log(message);
             })
@@ -80,14 +83,14 @@ test.describe('Sequential Test Suite', () => {
     }
 
     function verifyLastName(word1, word2) {
-        let leadAddCheck = new Promise((resolve, reject) => {
+        let verifyLastNamePromise = new Promise((resolve, reject) => {
             if (word2.includes(word1)) {
                 resolve("Individual added successfully")
             } else {
                 reject("Individual not added");
             }
         });
-        leadAddCheck
+        verifyLastNamePromise
             .then(message => {
                 console.log(message);
             })
