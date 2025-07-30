@@ -12,12 +12,16 @@ test("1 Create Lead ", async ({ page }) => {
     await page.locator("#password").fill(`RaviSalesTest#1432`);
     await page.locator("#Login").click();
     await page.locator(".slds-icon-waffle").click();
-    await page.locator("//button[text()='View All']").click();
+    //await page.locator("//button[text()='View All']").click();
+    await page.getByText('View All').click();
+    //await page.getByText('Sales').click();
+    //await page.locator(":text('Sales')").click();
     await page.locator("//p[text()='Sales']").click();
     await page.locator("a[title='Leads']").click();
     await page.locator("div[title='New']").click();
     await page.locator("button[name='salutation']").click();
-    await page.locator("//*[text()='Mr.']").click();
+    await page.getByText('Mr.').click();
+    //await page.locator("//*[text()='Mr.']").click();
     await page.locator("input[name='lastName']").fill(expectedLastName);
     await page.locator("input[name='Company']").fill(expectedCompanyName);
     await page.locator("button[name='SaveEdit']").click();
@@ -28,10 +32,10 @@ test("1 Create Lead ", async ({ page }) => {
     //await page.waitForTimeout(3000);
     console.log("ExpectedCompanyName:" + expectedCompanyName);
     console.log("ActualCompany:" + actualCompany);
-    checkValues(expectedLastName, actualLastName, expectedCompanyName, actualCompany);
+    checkIfLeadAdded(expectedLastName, actualLastName, expectedCompanyName, actualCompany);
 })
 
-function checkValues(word1, word2, word3, word4) {
+function checkIfLeadAdded(word1, word2, word3, word4) {
     let leadAddCheck = new Promise((resolve, reject) => {
         if (word2.includes(word1) && word4.includes(word3)) {
             resolve("Lead added successfully")

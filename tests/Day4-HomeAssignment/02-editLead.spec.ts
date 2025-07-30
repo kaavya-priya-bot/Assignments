@@ -8,9 +8,12 @@ test("1 Edit Lead ", async ({ page }) => {
     await page.locator("#password").fill(`crmsfa`);
     await page.locator("input[value='Login']").click();
     //await page.locator("img[src='/opentaps_images/integratingweb/crm.png']");
-    await page.locator("//div[@class='crmsfa']/a").click();
-    await page.locator("//a[text()='Leads']");
+    await page.locator("//div[@class='crmsfa']/a[1]").click();
+    //await page.locator("div.crmsfa a:first-child ").click();
+    //await page.getByText('Leads').click();
+    //await page.locator(":text('Leads')").click();
     await page.locator("//a[text()='Leads']").click();
+    //await page.getByText(":text('Create Lead')").click();
     await page.locator("//a[text()='Create Lead']").click();
     await page.locator("#createLeadForm_companyName");
     await page.locator("#createLeadForm_companyName").fill(generateRandomCompanyName());
@@ -18,7 +21,7 @@ test("1 Edit Lead ", async ({ page }) => {
     await page.locator("#createLeadForm_lastName").fill(generateRandomLastName());
     await page.locator("input[value='Create Lead']").click();
     //await page.waitForTimeout(3000);
-    await page.locator("//a[text()='Edit']");
+    //await page.locator("//a[text()='Edit']");
     await page.locator("//a[text()='Edit']").click();
     await page.locator("#updateLeadForm_companyName").fill(generateRandomCompanyName());
     await page.locator("input[value='Update']")
