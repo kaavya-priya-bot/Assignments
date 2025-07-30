@@ -1,13 +1,10 @@
 // function determining whether a given number is odd or even.
+const input=2;
 function isOddOrEven(number){
-    let oddEven="Odd";
     if(number%2===0){
-        oddEven="Even";
-        return oddEven;
+        return "Even";
     }
-    else{
-        return oddEven;
-    }
+ return "odd";
 }
 
-console.log(isOddOrEven(2));
+console.log(`The given number ${input} is `+isOddOrEven(input));

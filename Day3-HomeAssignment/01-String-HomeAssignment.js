@@ -26,16 +26,18 @@ console.log("*************Anagram*************");
 const funReomoveSpaceToLowerCase= (text) => text.split(" ").join("").toLowerCase();
 const sortString= (text) => text.split("").sort().join('');
 function isAnagram(word1,word2){
-    
-    if(word1.length!=word2.length){
-        return `${word1} and ${word2} is not anagram`;
-    }
-    else{
+    let sortedString1=sortString(funReomoveSpaceToLowerCase(word1));
+    let sortedString2=sortString(funReomoveSpaceToLowerCase(word2));
+
+    if(sortedString1.length===sortedString2.length){
         if(sortString(funReomoveSpaceToLowerCase(word1))===sortString(funReomoveSpaceToLowerCase(word2))){
             return `${word1} and ${word2} is anagram`;
         }else
             return `${word1} and ${word2} is not anagram`;
     }
-}
+        return `${word1} and ${word2} is not anagram`;
+    }
+
 console.log (isAnagram('listen', 'silent'));
 console.log (isAnagram('hello', 'world'));
+console.log (isAnagram('Dormitory', 'dirty room'));

@@ -1,21 +1,21 @@
 //using var we can redeclare and reassign
-var username="kaavya@gmail.com";
-var username="MAhi@gmail.com";//redeclaration
+var userName="kaavya@gmail.com";
+var userName="Mahi@gmail.com";//redeclaration
 
-username="MahiKaavya@gmail.com";//reassignment
+userName="MahiKaavya@gmail.com";//reassignment
 
-console.log(username);
+console.log(userName);
 
 //using let we cannot redeclare but reassign
-let AccBalance=20000;
+let accBalance=20000;
 //let AccBalance="MAhi@gmail.com";//redeclaration is not allowed
 
-AccBalance=50000;//reassignment is allowed
-console.log(AccBalance);
+accBalance=50000;//reassignment is allowed
+console.log(accBalance);
 
 //using const we cannot redeclare and reassign
-const username2=2345637;
+const userName2=2345637;
 //const username2="java@gmail.com";//redeclaration is not allowed
 //username2=345354654;//reassignment is not allowed
 
-console.log(username2);
+console.log(userName2);

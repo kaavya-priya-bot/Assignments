@@ -1,4 +1,5 @@
 //Promise to check Random Number within a limit
+function checkRandomNumber(){
 let conditionalPromise=new Promise((resolve,reject) => {
 let randomNo=Math.random();
 console.log("Generated random number:"+randomNo);
@@ -15,3 +16,6 @@ conditionalPromise
 .catch(error=>{
     console.log(error);
 })
+return conditionalPromise;
+}
+checkRandomNumber();
