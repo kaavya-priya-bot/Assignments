@@ -1,6 +1,6 @@
 // Promise to simulate tasks like fetching data with Timeout
 function fetchDataFromDatabase(){ 
-let fetchData=new Promise((resolve,reject) => {   
+ return new Promise((resolve,reject) => {   
 const data = false;
 console.log("Fetching data from database...");
 setTimeout(()=>{
@@ -12,7 +12,9 @@ else{
 }
 },2000)
 });
-fetchData
+}
+
+fetchDataFromDatabase()
     .then((message)=>{
         console.log(message)
     })
@@ -20,6 +22,6 @@ fetchData
         console.log(error)
     })
 
-return fetchData;
-}
-fetchDataFromDatabase();    
+
+
+

@@ -1,5 +1,6 @@
 import { chromium, test } from "@playwright/test"
 
+
 test.describe('Sequential Test Suite', () => {
     test.describe.configure({ mode: 'serial' });
     let lastName = generateRandomLastName();
@@ -15,11 +16,11 @@ test.describe('Sequential Test Suite', () => {
         await page.locator("#password").fill(`RaviSalesTest#1432`);
         await page.locator("#Login").click();
         await page.locator(".slds-icon-waffle").click();
-        // await page.locator("//button[text()='View All']").click();
-        await page.locator(":text('View All')").click();
+        await page.locator("//button[text()='View All']").click();
+        // await page.locator(":text('View All')").click();
         await page.locator("a[data-label='Individuals']").click();
         await page.waitForTimeout(3000);
-        await page.locator("//a[@title='Individuals']/following-sibling::one-app-nav-bar-item-dropdown//a").click();
+        await page.locator("//a[contains(@title,'Individuals')]/following-sibling::one-app-nav-bar-item-dropdown/div/one-app-nav-bar-menu-button/a").click();
         //await page.locator("a:right-of(//a[@title='Individuals'])").click;
         //await page.waitForTimeout(3000);
         await page.locator(":text('New Individual')").click();
@@ -28,9 +29,9 @@ test.describe('Sequential Test Suite', () => {
         //await page.waitForTimeout(3000);
         await page.locator("button[title='Save']").click();
         //await page.waitForTimeout(3000);
-        let actualLastName = await page.locator("//div[text()='Individual']/following-sibling::div/span").innerText();
-        console.log("Expected Last Name from the page: "+lastName);
-        console.log("Actual Last Name fetched from the page: "+actualLastName);
+        let actualLastName = await page.locator("//div[contains(text(),'Individual')]/following-sibling::div/span").innerText();
+        console.log("Expected Last Name from the page: " + lastName);
+        console.log("Actual Last Name fetched from the page: " + actualLastName);
         await page.waitForTimeout(3000);
         verifyLastName(lastName, actualLastName);
     })
@@ -44,6 +45,7 @@ test.describe('Sequential Test Suite', () => {
         await page.locator("#password").fill(`RaviSalesTest#1432`);
         await page.locator("#Login").click();
         await page.locator(".slds-icon-waffle").click();
+        await page.waitForLoadState("domcontentloaded");
         await page.locator(":text('View All')").click();
         //await page.waitForTimeout(3000);
         await page.locator("a[data-label='Individuals']").click();
@@ -57,12 +59,29 @@ test.describe('Sequential Test Suite', () => {
         await page.locator("a:below(:text('Salutation'))").first().click();
         await page.locator(":text('Mr.')").click();
         await page.locator("input[placeholder='First Name']").fill(firstName);
+        await page.waitForTimeout(4000);
         await page.locator("button[title='Save']").click();
-        await page.reload();
+        await page.waitForLoadState("domcontentloaded");
+        await page.locator("//span[text()='Details']").click();
+        //await page.waitForTimeout(6000);
+        /*  await page.locator("//a[contains(@title,'"+lastName+"')]/following-sibling::one-app-nav-bar-item-dropdown/div/one-app-nav-bar-menu-button/a").click();
+         await page.locator(":text('All Individuals')").click();
+         await page.waitForTimeout(4000);
+         await page.locator("//input[@name='Individual-search-input']").fill(lastName);
+         await page.keyboard.press('Enter');
+         await page.waitForTimeout(4000);
+         let tableRow=await page.locator("//table[@aria-label='All Individuals']/tbody/tr").all();
+         if(tableRow.length>0){
+ 
+         }
+         else{
+           
+         } */
+        //await page.reload();
         let actualName = await page.locator("//div[text()='Individual']/following-sibling::div/span").innerText();
-        console.log("Expected First Name from the page: "+firstName);
-        console.log("Expected Last Name from the page: "+lastName);
-        console.log("Actual Name fetched from the page: "+actualName);
+        console.log("Expected First Name from the page: " + firstName);
+        console.log("Expected Last Name from the page: " + lastName);
+        console.log("Actual Name fetched from the page: " + actualName);
         verifyNames(firstName, lastName, actualName);
     })
     function verifyNames(word1, word2, word3) {
@@ -115,3 +134,7 @@ test.describe('Sequential Test Suite', () => {
         return "Test" + result;
     }
 });
+
+function expect(arg0: boolean) {
+    throw new Error("Function not implemented.");
+}
