@@ -8,7 +8,7 @@ test("1 Edit Lead ", async ({ page }) => {
     await page.locator("#password").fill(`crmsfa`);
     await page.locator("input[value='Login']").click();
     //await page.locator("img[src='/opentaps_images/integratingweb/crm.png']");
-    await page.locator("//div[@class='crmsfa']/a[1]").click();
+    await page.locator("//a[contains(text(),'CRM/SFA')]").click();
     //await page.locator("div.crmsfa a:first-child ").click();
     //await page.getByText('Leads').click();
     //await page.locator(":text('Leads')").click();
