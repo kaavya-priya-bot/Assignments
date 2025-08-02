@@ -1,0 +1,92 @@
+
+Relationship based xpath
+
+
+
+1. Parent to Child
+-------------------
+
+
+//form[@id='login']/p
+
+
+2. Grandparent to grsndchild
+----------------------------
+
+
+//form[@id='login']//label
+
+
+
+3. CHild to Parent
+------------------
+
+
+//input[@id='username']/parent::p
+
+
+4. GrandCHild to Grandparent
+------------------------------
+
+
+//input[@id='username']/ancestor::form
+
+
+5. Younger sibling to elder sibling
+------------------------------------
+
+
+//input[@id='username']/preceding-sibling::label
+
+
+6. Elder Sibling to Younger Sibling
+------------------------------------
+
+
+//label[text()='Username']/following-sibling::input
+
+
+7. Elder cousin to Younger cousin
+----------------------------------
+
+
+//input[@id='username']/following::label
+
+
+8. Youmger cousin to Elder cousin
+----------------------------------
+
+
+//label[text()='Password']/preceding::label
+
+Classroom Activity
+--------------------
+
+
+SalesForce :
+------------
+
+
+Steps :
+1. Go to https://login.salesforce.com/?locale=in 
+2. And login using credentials. [username : ravindran.ramdas@testleaf.com, password : RaviSalesTest]
+3. Click on the "+" icon (6th icon from top right corner)
+4. Choose and click "New Task" from dropdown.
+5. Now get the xpath for "Subject" label web element.
+
+
+Hint : New Task younger cousin to elder
+
+
+
+
+Myntra: Checkbox
+----------------
+
+
+-> Go to mynthra.com choose "MEN" from the tab available.
+-> Click the any product(ex:T-Shirts)
+-> Select the check box of "Roadster" under the brands
+
+
+Myntra: Checkbox elder sibling to younger sibling
