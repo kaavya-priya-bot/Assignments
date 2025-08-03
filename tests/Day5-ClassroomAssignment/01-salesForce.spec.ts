@@ -8,13 +8,9 @@ test(`SalesForce: get the xpath for "Subject" label web element`, async ({ page 
     await page.waitForLoadState(`domcontentloaded`);
     await page.locator(`#username`).fill(`ravindran.ramdas@testleaf.com`);
     await page.locator(`#password`).fill(`RaviSalesTest#1432`);
-    //await page.locator("#username").fill(`udaya18udai318@agentforce.com`);
-    //await page.locator("#password").fill(`Sales@123`);
     await page.locator(`#Login`).click();
     await page.waitForTimeout(3000);
-    //await page.locator(`//input[contains(@title,'Search')]/following::li[2]//a`).click();
-    await page.locator(`//input[contains(@title,'Search')]/following::li/div[contains(@class,'oneGlobalCreate')]//a`).click();
-    //await page.getByRole("document", { name: "Home | Salesforce" }).click();
+    await page.getByRole("button", { name: "Global Actions" }).click();
     await page.locator(`//a[contains(@title,'New Task')]`).click();
     await page.waitForLoadState(`domcontentloaded`);
     await page.waitForTimeout(3000);
