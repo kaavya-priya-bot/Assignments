@@ -100,7 +100,6 @@ test.describe('Sequential Test Suite', () => {
     for (let i = 0; i < length; i++) {
         result += characters.charAt(Math.floor(Math.random() * characters.length));
     }
-    console.log(prefix.concat(result));
     return prefix.concat(result);
 }
 
