@@ -7,8 +7,8 @@ test(`Test to launch Browser`, async () => {
     const browser = await chromium.launch({ channel: "msedge", headless: false }) // promise is resolved only when your browser launch is completed.
     // promise is rejected it will not move to your next step and throw timeout error
     const browser1 = await firefox.launch({ channel: "firefox", headless: false })
-    const context = await browser.newContext() // promise should be resolved to move to create a page
-    const context1 = await browser1.newContext()
+    const context = await browser.newContext(); // promise should be resolved to move to create a page
+    const context1 = await browser1.newContext();
     const page = await context.newPage();
     const page1 = await context1.newPage();
     await page.goto(expectedURL);

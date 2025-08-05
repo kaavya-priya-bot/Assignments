@@ -30,6 +30,9 @@ export default defineConfig({
     // baseURL: 'http://localhost:3000',
     //channel:"chrome",
     headless:false,
+    viewport:{ width: 1500, height: 730 },
+    screenshot: 'on',
+    //video: 'retain-on-failure',
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
   },

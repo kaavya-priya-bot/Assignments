@@ -1,0 +1,150 @@
+📑 Agenda for Week 3 Day 2 - Playwright Featutes and Introduction to TypeScript
+ 
+📆 Date: 03 August [Sunday]  
+
+🕝 Session Highlights  
+
+ Recap  
+* Key takeaways from previous sessions.  
+
+1. Handling Dropdowns
+-----------------------  
+* Understanding dropdown types: 'select' tags and custom dropdowns.  
+* Selecting options by value, label, or index.
+
+2. Assertions Using the 'expect' Library 
+------------------------------------------ 
+* Commonly used assertions and their applications.  
+
+3. Understanding Arrays in JavaScript 
+--------------------------------------- 
+* Basics of Arrays: What and Why?  
+* Common Methods and Operations on Arrays.  
+
+4. Introduction to TypeScript
+-------------------------------
+* What is TypeScript, and Why Use It?  
+* Basic Syntax and First TypeScript Program.  
+ TypeScript Types  
+* Overview of Types in TypeScript:  
+* Hands-on: Declaring Variables with Different Types.  
+Explicit Types & Annotations 
+* Why Use Type Annotations?  
+* Explicitly Defining Function Parameters and Return Types.  
+* Examples:  
+     * Using Annotations with Arrays, Objects, and Functions.  
+     * Type Inference vs. Explicit Types.  
+
+ Type Aliases  
+* What are Type Aliases and why use them?  
+* Syntax and examples.   
+
+Object Literals  
+* Defining and using object types in TypeScript.  
+
+ 
+  
+
+🕡 Wrap Up / Q&A  
+
+📝 Keep your physical notebook and pen handy to sketch out ideas!
+
+
+Sample Dropdown of ecommerce website :
+------------------------------------
+
+<select id="category-filter">
+  <option value="101"> Electronics</option> 0
+  <option value="102"> Books</option>       1
+  <option value="103"> Bags</option>        2
+  <option value="104"> Clothes</option>     3
+
+
+1. Select By Value :
+-Stable and less likely to change since the value is often connected to your backend
+
+2. Select By Label :
+Tend to change due to business requirements / geography
+Example travel name of places in your website
+
+3. Select BY Index :
+When ever there is not change in the order of your dropdown can go for select by index 
+
+Non-select tags
+---------------
+1. Locate your dropdown and use click()/ enter the value
+2. locate the particular option from the dropdownlist - clickit
+
+Assertions :
+-----------
+
+1. Generic Assertion.
+
+Assertions on variables or values, not directly tied to UI elements.
+
+toHaveValue()
+toHaveText()
+toContainText()
+
+2. Locator Assertion.
+Assertions performed on UI elements indentified using locators
+
+toBeVisible()
+toBeEnabled()
+toBeEditable()
+
+3. Page Assertion.
+
+Assertions made on the page object , such as URL and title.
+
+toHaveURL(url)
+toHaveTitle()
+
+4. Snapshot Assertions.
+Assertions comparing two visual elments from the UI particular
+
+5. API refernce Assertions.
+Assertions used check your API reponses 
+
+
+Based on Functionality 
+--------------------
+
+1. Auto retry
+2. Non-retry assetion
+
+
+Hard Assertion.
+Soft Assertion.
+
+
+
+
+
+
+
+
+Ways of handling dropdown:
+----------------------------
+
+| Method     | Stability | Readability | Use When...                         |
+| ---------- | --------- | ----------- | ----------------------------------- |
+| By value |   High    |   Low       | Most reliable, backend-driven IDs   |
+| By label |   Medium  |   High      | UI is stable or for quick checks    |
+| By index |   Low     |   Low       | Only if no other way /staticorder |
+
+
+
+
+
+
+
+Arrays :
+--------
+
+1. Dynamic size
+2. Heterogenous elements.
+
+
+
+
