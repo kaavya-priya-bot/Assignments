@@ -10,7 +10,7 @@ const expectedAnnualRevenueIndollar=annualRevenue.toLocaleString('en-US', {
 const expectedDept = generateRandomText(`IT-`,7);
 const expectedDesc = generateRandomText(`Updating company name, revenue and department-`,20);
 
-test(`Create a Lead in Leaftaps`, async ({ page }) => {
+test(`Edit Lead in Leaftaps`, async ({ page }) => {
 
     await page.setViewportSize({ width: 1500, height: 730 });
 

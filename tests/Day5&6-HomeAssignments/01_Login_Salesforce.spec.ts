@@ -1,5 +1,5 @@
 import { chromium, test } from "@playwright/test"
-test("Create New Account ", async () => {
+test("Login Salesforce", async () => {
     const browser = await chromium.launch({ channel: "msedge", headless: true })
     const context = await browser.newContext();
     const page = await context.newPage();
