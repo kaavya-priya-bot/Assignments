@@ -14,7 +14,11 @@ test(`Learn to verify button functionalities using assertions`, async ({ page })
     await page.getByRole(`button`,{name:"Image"}).click();//Click the Image button
     await page.waitForTimeout(2000);
     await page.getByRole(`button`,{name:"Image"}).click();
-    const noOfRoundedButtons=await page.locator(`//button[contains(@class,'rounded-button')]`).count();
-    await expect(noOfRoundedButtons).toEqual(noOfRoundedBtns);//Check how many rounded buttons are present 
-    console.log(`No of rounded buttons in web page is ${noOfRoundedButtons}`);
+    const roundedButtons= await page.locator(`//button[contains(@class,'rounded-button')]`);
+    const expectedNoOfRoundedButtons=await page.locator(`//button[contains(@class,'rounded-button')]`).count();
+    //Auto-retrying assertion
+    await expect(roundedButtons).toHaveCount(noOfRoundedBtns);
+    //non-retrying aasertion
+    await expect(expectedNoOfRoundedButtons).toEqual(noOfRoundedBtns);//Check how many rounded buttons are present 
+    console.log(`No of rounded buttons in web page is ${expectedNoOfRoundedButtons}`);
 })
