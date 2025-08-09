@@ -1,0 +1,79 @@
+📑 Agenda for Week 3 Day 1: TypeScript Fundamentals
+🎯 [ Focus: Mastering the basics of TypeScript with a foundation in JavaScript concepts ]  
+
+📆 Date: 08 February [Saturday]
+
+🕝 Session Highlights
+
+⿡ Recap
+   - Key Takeaways from Week2. 
+ * Understanding Playwright Architecture,About Browser, Context and Page
+ * CSS Selectors, XPath Selectors and Playwright's getBy Locator
+
+⿤ Introduction to TypeScript
+* What is TypeScript, and Why Use It?  
+* Setting Up a TypeScript Environment.  
+* Basic Syntax and First TypeScript Program.  
+
+⿥ TypeScript Types  
+* Overview of Types in TypeScript:  
+* Hands-on: Declaring Variables with Different Types.  
+
+⿦ Explicit Types & Annotations 
+* Why Use Type Annotations?  
+* Explicitly Defining Function Parameters and Return Types.  
+* Examples:  
+     * Using Annotations with Arrays, Objects, and Functions.  
+     * Type Inference vs. Explicit Types.  
+
+⿢ Type Aliases  
+* What are Type Aliases and why use them?  
+* Syntax and examples.   
+
+⿣ Object Literals  
+* Defining and using object types in TypeScript.  
+
+⿤ Type Assertion  
+* What is Type Assertion?  
+* Examples: Converting unknown types. 
+
+⿥ Enums  
+* Understanding Enums: Numeric and String Enums.  
+
+⿦ Optional & Default Parameters  
+* Adding flexibility to functions with optional parameters.  
+* Setting default values for parameters. 
+  
+
+
+
+🕡 Wrap Up / Q&A
+
+📝 Keep your physical notebook and pen handy to sketch out ideas!
+
+
+TypeScript Installation commands:
+---------------------------------
+
+1. npm install typescript
+
+2. Check : tsc --version
+
+------------------------------------------------
+
+Note if you want directly run the .ts file follow below steps :
+--------------------------------------------------------------
+
+1. npm install -g ts-node typescript
+
+2. npx tsc --init --> This will create a default tsconfig.json
+
+3. Make below changes in the tsconfig.json
+{
+  "compilerOptions": {
+    "module": "CommonJS"
+  }
+}
+4. Now execute the file directly using the below command
+
+ ts-node filename.ts
