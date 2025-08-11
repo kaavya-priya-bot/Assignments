@@ -1,6 +1,6 @@
 
 
-let user :{
+let user1 :{
 firstname:string,
 lastName:string,
 email:string,
@@ -18,13 +18,13 @@ isActive:true
 
 //objectName.property
 
-console.log(user.firstname);
-console.log(user.lastName);
-console.log(user.email);
+console.log(user1.firstname);
+console.log(user1.lastName);
+console.log(user1.email);
 
 //square brackets notation
 
-let user1 :{
+let user2 :{
 "first-name":string,
 lastName:string,
 email:string,
@@ -38,4 +38,4 @@ age:34,
 isActive:true
 }
 
-console.log(user1["first-name"]);
+console.log(user2["first-name"]);

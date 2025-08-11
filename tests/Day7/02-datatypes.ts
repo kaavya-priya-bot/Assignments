@@ -21,7 +21,7 @@ let data:any="Message received from the server";
 data=1234;
 data=true;
 
-let value : unknown; // dsimilar to that of any with some conditioning
+let value : unknown; // similar to that of any with some conditioning
 value=43;
 value="Hello";
 
