@@ -1,7 +1,7 @@
 
 function fibonacciSeries(length:number):void{
     let num1 = 0, num2 = 1;
-    process.stdout.write(`Fibonacci Series: `);
+    process.stdout.write(`Fibonacci Series of length ${length} : `);
     for (let i = 0; i < length; i++) {
             process.stdout.write(`${num1}  `);
             let num3 = num1+num2;
