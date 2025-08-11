@@ -1,14 +1,22 @@
 function fibonacciSeries(length) {
     var num1 = 0, num2 = 1;
-    process.stdout.write("Fibonacci Series of length ".concat(length, " : "));
-    for (var i = 0; i < length; i++) {
-        process.stdout.write("".concat(num1, "  "));
-        var num3 = num1 + num2;
-        num1 = num2;
-        num2 = num3;
+    if (length < 0) {
+        console.log("Enter valid I/p");
     }
-    process.stdout.write("\n");
+    else {
+        process.stdout.write("Fibonacci Series of length ".concat(length, " : "));
+        for (var i = 0; i < length; i++) {
+            process.stdout.write("".concat(num1, "  "));
+            var num3 = num1 + num2;
+            num1 = num2;
+            num2 = num3;
+        }
+        process.stdout.write("\n");
+    }
 }
 fibonacciSeries(4);
 fibonacciSeries(10);
+fibonacciSeries(1);
+fibonacciSeries(-3);
 fibonacciSeries(19);
+fibonacciSeries(0);

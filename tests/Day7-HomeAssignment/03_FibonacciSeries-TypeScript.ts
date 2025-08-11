@@ -1,6 +1,10 @@
 
 function fibonacciSeries(length:number):void{
     let num1 = 0, num2 = 1;
+    if(length<0){
+        console.log(`Enter valid I/p`);
+    }
+    else{
     process.stdout.write(`Fibonacci Series of length ${length} : `);
     for (let i = 0; i < length; i++) {
             process.stdout.write(`${num1}  `);
@@ -9,8 +13,13 @@ function fibonacciSeries(length:number):void{
             num2 = num3;
         }
         process.stdout.write(`\n`);
+    }
 }
 fibonacciSeries(4);
 fibonacciSeries(10);
+fibonacciSeries(1);
+fibonacciSeries(-3);
 fibonacciSeries(19);
+fibonacciSeries(0);
+
 
