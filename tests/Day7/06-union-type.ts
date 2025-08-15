@@ -12,7 +12,7 @@ async function performAction(url:string,action:'screenshot'|'title'):Promise<str
         const screenshotPath = 'screenshot.png'
         await page.screenshot({path:screenshotPath});
         await browser.close();
-        return `Screenshot saved as ${screenshotPath}`
+        return `Screenshot saved as ${screenshotPath}`;
     }else if(action==='title'){
 
         const title = await page.title();
@@ -20,7 +20,7 @@ async function performAction(url:string,action:'screenshot'|'title'):Promise<str
         return `The title of the page is ${title}`
     }
 
-    await browser.close()
+    await browser.close();
 
 }
 
@@ -30,4 +30,4 @@ console.log(await performAction("https://www.amazon.com","title"))
 
 }
 
-runTest()
+runTest();
