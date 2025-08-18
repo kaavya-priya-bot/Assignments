@@ -3,10 +3,13 @@ import credentials from "../../Data/login.json";
 
 test(`To merge the leads created  ${credentials[0].TcaseId}`, async ({ context, page }) => {
     const expectedPageTitleAfterMerge = `View Lead | opentaps CRM`;
+    const url=credentials[0].Url;
+    const userName=credentials[0].Username;
+    const passWord=credentials[0].Password;
     await page.setViewportSize({ width: 1550, height: 800 });
-    await page.goto(credentials[0].Url);
-    await page.locator(`#username`).fill(credentials[0].Username);//Enter the username
-    await page.locator(`#password`).fill(credentials[0].Password);//Enter the password
+    await page.goto(url);
+    await page.locator(`#username`).fill(userName);//Enter the username
+    await page.locator(`#password`).fill(passWord);//Enter the password
     await page.locator(`.decorativeSubmit`).click();//Click the Login button
     await page.locator(`//a[contains(text(),'CRM/SFA')]`).click();//Click CRM/SFA 
     await page.locator(`//a[text()='Leads']`).click();//Click Leads 

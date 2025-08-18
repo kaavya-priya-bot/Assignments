@@ -3,14 +3,17 @@ import credentials from "../../Data/loginSalesForce.json";
 
 
 test(`Learn to automate the file upload process ${credentials[0].TcaseId}`, async ({ page }) => {
+    const url=credentials[0].URL;
+    const userName=credentials[0].Username;
+    const passWord=credentials[0].Password;
     await page.setViewportSize({ width: 1550, height: 800 });
     const expectedAccountName = generateRandomText("Account", 7);
     const expectedAccCreatedToastMsg = `Account \"${expectedAccountName}\" was created.`;
     const expectedFileUploadToastMsg = `1 file was added to the Account.`;
     const fileName = `learningFileUpload`;
-    await page.goto(credentials[0].URL);
-    await page.locator(`#username`).fill(credentials[0].Username);//Enter username
-    await page.locator(`#password`).fill(credentials[0].Password);//Enter password 
+    await page.goto(url);
+    await page.locator(`#username`).fill(userName);//Enter username
+    await page.locator(`#password`).fill(passWord);//Enter password 
     await page.locator(`#Login`).click();//Click Login 
     await page.waitForSelector(`//button[text()='Learn More']`, { state: `visible` });
     await page.locator(`.slds-icon-waffle`).click();//Click App Launcher icon

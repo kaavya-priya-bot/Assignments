@@ -11,6 +11,9 @@ let records: any[] = parse(fs.readFileSync("Data/createLeadData.csv"), {
 })
 test(`Create a new lead filling the mandatory fields and select the values from the dropdowns using data 
 parameterization  ${credentials[0].TcaseId}`, async ({ context, page }) => {
+    const url=credentials[0].Url;
+    const userName=credentials[0].Username;
+    const passWord=credentials[0].Password;
     const source = <string>process.env.SF_Source;
     const marketingCampaign = <string>process.env.SF_MarketingCampaign;
     const industry = Number(<string>process.env.SF_Industry);
@@ -18,9 +21,9 @@ parameterization  ${credentials[0].TcaseId}`, async ({ context, page }) => {
     const country = <string>process.env.SF_Country;
     const state = <string>process.env.SF_State;
     await page.setViewportSize({ width: 1550, height: 800 });
-    await page.goto(credentials[0].Url);
-    await page.locator(`#username`).fill(credentials[0].Username);//Enter the username
-    await page.locator(`#password`).fill(credentials[0].Password);//Enter the password
+    await page.goto(url);
+    await page.locator(`#username`).fill(userName);//Enter the username
+    await page.locator(`#password`).fill(passWord);//Enter the password
     await page.locator(`.decorativeSubmit`).click();//Click the Login button
     await page.locator(`//a[contains(text(),'CRM/SFA')]`).click();//Click CRM/SFA 
     await page.locator(`//a[text()='Leads']`).click();//Click Leads 

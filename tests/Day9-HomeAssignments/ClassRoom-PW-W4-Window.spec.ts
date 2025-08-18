@@ -2,12 +2,14 @@ import { expect, test } from "@playwright/test";
 import credentials from "../../Data/loginSalesForce.json";
 
 test(`Handling multiple windows in concurrent way`, async ({ context, page }) => {
-
+    const url=credentials[0].URL;
+    const userName=credentials[0].Username;
+    const passWord=credentials[0].Password;
     const expectedTitle = `Service Cloud: AI-powered Customer Service Agent Console | Salesforce US`;
     const expectedURL = `https://www.salesforce.com/service/cloud/`;
-    await page.goto(credentials[0].URL);
-    await page.locator(`#username`).fill(credentials[0].Username);//Enter username
-    await page.locator(`#password`).fill(credentials[0].Password);//Enter password 
+    await page.goto(url);
+    await page.locator(`#username`).fill(userName);//Enter username
+    await page.locator(`#password`).fill(passWord);//Enter password 
     await page.locator(`#Login`).click();
     await page.waitForLoadState("domcontentloaded");
     await page.waitForSelector(`//button[text()='Learn More']`, { state: "visible" });
